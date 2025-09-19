@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+.testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .testimonial-card {
+                padding: 1.5rem;
+                margin: 0;
+            }
+            
+            .testimonial-card p {
+                font-size: 0.95rem;
+            }<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -292,6 +304,49 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: white;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-card .stars {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-name {
+            font-weight: bold;
+            color: #1e3c72;
+            font-size: 1rem;
+            text-align: right;
         }
 
         /* Especialización */
@@ -646,6 +701,47 @@
             <div class="scroll-indicator">
                 <div style="font-size: 2rem;">↓</div>
                 <div>Descubre más</div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section-white">
+            <h2>Lo Que Dicen Mis Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Estaba completamente perdido, mi pareja me engañaba y había perdido la confianza. Saimón me acompañó durante 3 meses, cada sesión era una bocanada de oxígeno. Ahora tengo muchos proyectos con mi pareja y me siento libre."</p>
+                    <div class="client-name">- Guillermo M.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Saimón es una masterclass en seducción y comunicación. Hice la formación completa con él y apliqué todos sus consejos. Si eres serio y quieres liberarte de tus cadenas psicológicas, él es exactamente el coach que necesitas."</p>
+                    <div class="client-name">- Lorenzo R.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Me siento más feliz, más confiado, me desapego de todo y vivo para mí. Hice los ejercicios que me diste para cambiar la historia con mi padre, va mucho mejor."</p>
+                    <div class="client-name">- Vicente M.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Empecé el coaching con Saimón después de comprar su formación. Me ayudó a entender la psicología femenina y ser un hombre que inspire. Gracias a él inicio hoy una nueva relación con la mujer que deseaba de todo corazón."</p>
+                    <div class="client-name">- Tomás L.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Tengo cada vez más facilidad para escuchar y ser paciente, mi enfoque está más disperso así que tengo las ideas más claras. Mi confianza sube poco a poco."</p>
+                    <div class="client-name">- Pablo T.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Durante todo el coaching me sentí guiado y respetado. No cambié por completo, solo modifiqué algunos comportamientos inadaptados. Avanzamos paso a paso con su expertise."</p>
+                    <div class="client-name">- Kevin S.</div>
+                </div>
             </div>
         </section>
 
