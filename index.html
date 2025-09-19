@@ -1,22 +1,9 @@
-.testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .testimonial-card {
-                padding: 1.5rem;
-                margin: 0;
-            }
-            
-            .testimonial-card p {
-                font-size: 0.95rem;
-            }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saimón Pablo - Coach Personal | Comunicación & Actitudes</title>
-    <meta name="description" content="Coach personal especializado en ayudar a hombres a encontrar su mujer soñada en 90 días">
+    <title>Saimón Pablo - Coach Especializado en Relaciones</title>
     <style>
         * {
             margin: 0;
@@ -24,928 +11,374 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Fondo con gradiente profesional */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 12s ease infinite;
-            z-index: -2;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
         }
 
-        nav {
+        .social-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #1e3c72;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-left: 2rem;
+            gap: 15px;
         }
 
         .social-icon {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 1.2rem;
+            color: white;
+            font-size: 18px;
             transition: transform 0.3s ease;
-            overflow: hidden;
         }
 
         .social-icon:hover {
             transform: scale(1.1);
         }
 
-        .social-icon.whatsapp {
-            background: #25D366;
-            color: white;
-        }
+        .whatsapp { background: #25D366; }
+        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .tiktok { background: #000; }
 
-        .social-icon.instagram {
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-            color: white;
-        }
-
-        .social-icon.tiktok {
-            background: #000;
-            color: white;
-        }
-
-        /* SVG Icons */
-        .instagram-svg {
-            width: 20px;
-            height: 20px;
+        .social-icon svg {
+            width: 22px;
+            height: 22px;
             fill: white;
         }
 
-        .tiktok-svg {
-            width: 18px;
-            height: 18px;
-            fill: white;
-        }
-
-        .whatsapp-svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
-        .nav-links a {
-            color: #1e3c72;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 8px 16px;
-            border-radius: 20px;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 4px;
-            left: 16px;
-            background: #667eea;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: calc(100% - 32px);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            margin-top: 0;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease;
-            z-index: 10;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
+        .hero-content h1 {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            animation: slideInFromLeft 1s ease 0.2s both;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .hero .subtitle {
+        .hero-content .subtitle {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #f0f8ff;
-            font-weight: 300;
+            opacity: 0.9;
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: slideInFromRight 1s ease 0.4s both;
+        .hero-content .description {
+            font-size: 1.2rem;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 2rem;
-        }
-
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin: 0 auto 2rem;
+            opacity: 0.8;
         }
 
         .cta-button {
             display: inline-block;
             background: linear-gradient(45deg, #ff6b6b, #ffd93d);
             color: white;
-            padding: 15px 35px;
+            padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            animation: bounceIn 1s ease 0.6s both;
-        }
-
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
+            margin: 10px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.1);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid white;
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
+        /* Section */
+        .section {
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-white {
-            background: white;
-            border-radius: 20px;
-            margin: 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
             color: #333;
         }
 
-        .section-dark {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            margin: 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            color: white;
+        /* Testimonials */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 4rem 0;
         }
 
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #1e3c72;
-        }
-
-        .section-dark h2 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Servicios */
-        .services {
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .testimonial .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            color: #667eea;
+            text-align: right;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .service {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 15px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transition: transform 0.3s ease;
         }
 
         .service:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.2);
         }
 
         .service-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: block;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .service h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
+        }
+
+        /* Specialty */
+        .specialty {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
             color: white;
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border-left: 4px solid #667eea;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .testimonial-card .stars {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #ffd700;
-        }
-
-        .testimonial-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #444;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-
-        .client-name {
-            font-weight: bold;
-            color: #1e3c72;
-            font-size: 1rem;
-            text-align: right;
-        }
-
-        /* Especialización */
-        .specialization {
             text-align: center;
             padding: 4rem 2rem;
         }
 
-        .specialization-highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .specialty h2 {
             color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 2rem 0;
-        }
-
-        .specialization-highlight h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Tarjeta de contacto */
-        .contact-card {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .specialty p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .contact {
+            background: #333;
             color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .contact-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiero-text {
+            font-size: 1.5rem;
             font-weight: bold;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .profile-img::before {
-            content: "SP";
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .contact-info {
             margin: 2rem 0;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1rem 0;
-            font-size: 1.1rem;
-        }
-
-        .contact-item span {
-            font-size: 1.5rem;
-        }
-
-        /* QR Code */
-        .qr-section {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid #eee;
-        }
-
-        .qr-code {
-            display: inline-block;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 1rem;
-        }
-
-        /* Testimonial */
-        .testimonial {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .testimonial blockquote {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 1rem;
+        .quiero-text span {
+            color: #ffd93d;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-            }
-            
-            .hero {
-                padding: 0 1rem;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .hero-content {
-                width: 100%;
-                max-width: 100%;
-                padding: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                line-height: 1.5;
-                text-align: center;
-                margin: 0 auto 2rem auto;
-                max-width: 90%;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.8rem;
-                width: 100%;
-            }
-            
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-                width: 90%;
-                max-width: 280px;
-                text-align: center;
-                display: block;
-            }
-            
-            section {
-                padding: 3rem 1rem;
-                margin: 1rem;
-                width: calc(100% - 2rem);
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            .services {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .service {
-                margin: 0;
-                padding: 2rem 1.5rem;
-                text-align: center;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-                line-height: 1.3;
-                text-align: center;
+            .social-links {
+                position: static;
+                justify-content: center;
                 margin-bottom: 2rem;
             }
-            
-            .service h3 {
-                font-size: 1.3rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .service p {
-                font-size: 0.95rem;
-                line-height: 1.4;
-                text-align: center;
-            }
-            
-            .specialization {
-                padding: 2rem 1rem;
-                text-align: center;
-            }
-            
-            .specialization-highlight {
-                margin: 1rem 0;
-                padding: 2rem 1.5rem;
-                text-align: center;
-            }
-            
-            .specialization-highlight h3 {
-                font-size: 1.8rem;
-                line-height: 1.2;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .specialization-highlight p {
-                font-size: 1rem !important;
-                line-height: 1.5 !important;
-                text-align: center !important;
-            }
-            
-            .testimonial {
-                margin: 2rem 0;
-                padding: 2rem 1.5rem;
-                text-align: center;
-            }
-            
-            .testimonial blockquote {
-                font-size: 1.1rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            
-            .contact-card {
-                padding: 2rem 1.5rem;
-                margin: 1rem;
-                width: calc(100% - 2rem);
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .contact-info {
-                margin: 2rem 0;
-                text-align: center;
-            }
-            
-            .contact-item {
-                font-size: 0.9rem;
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-                margin: 1rem 0;
-            }
-            
-            .contact-item span:first-child {
-                font-size: 1.5rem;
-            }
-            
-            .qr-section {
-                text-align: center;
-                margin-top: 2rem;
-                padding-top: 2rem;
-            }
-            
-            .qr-code {
-                margin: 1rem auto;
-                display: block;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
             }
-            
-            .hero p {
-                font-size: 1rem;
-                max-width: 95%;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .specialization-highlight h3 {
-                font-size: 1.5rem;
-            }
-            
-            .service {
-                padding: 1.5rem;
-            }
-            
-            .contact-card {
-                padding: 1.5rem;
-            }
-        }
-        
-        /* Fix para centrar todo en móvil */
-        @media (max-width: 768px) {
-            .section-dark, .section-white {
-                margin: 1rem;
-                width: calc(100% - 2rem);
-                max-width: calc(100% - 2rem);
-                display: block;
-            }
-        }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            animation: bounce 2s infinite;
-        }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
+            .section {
+                padding: 3rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-
-    <header>
-        <nav>
-            <a href="#inicio" class="logo">Saimón Pablo</a>
-            <div style="display: flex; align-items: center;">
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-                <div class="social-icons">
-                    <a href="https://wa.me/message/LYRFQKDULL5SA1" target="_blank" class="social-icon whatsapp">
-                        <svg class="whatsapp-svg" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/pablooficial01_?igsh=NXM0aWJzbTg5dDBz" target="_blank" class="social-icon instagram">
-                        <svg class="instagram-svg" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="http://www.tiktok.com/@saimonpablooficial" target="_blank" class="social-icon tiktok">
-                        <svg class="tiktok-svg" viewBox="0 0 24 24">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                        </svg>
-                    </a>
-                </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="social-links">
+            <a href="https://wa.me/message/LYRFQKDULL5SA1" class="social-icon whatsapp" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/pablooficial01_?igsh=NXM0aWJzbTg5dDBz" class="social-icon instagram" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="http://www.tiktok.com/@saimonpablooficial" class="social-icon tiktok" target="_blank">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="hero-content">
+            <h1>Saimón Pablo</h1>
+            <div class="subtitle">Coach Especializado en Relaciones</div>
+            <p class="description">Ayudo a hombres a encontrar a su mujer soñada en menos de 90 días. Sin perder tiempo, con estrategias probadas de comunicación y actitudes que realmente funcionan.</p>
+            <div>
+                <a href="#contacto" class="cta-button">Llamada GRATUITA 30 min</a>
+                <a href="#servicios" class="cta-button cta-secondary">Conoce el Método</a>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <h1>Saimón Pablo</h1>
-                <div class="subtitle">Coach Especializado en Relaciones</div>
-                <p>Ayudo a <strong>hombres</strong> a encontrar a su <strong>mujer soñada</strong> en menos de <strong>90 días</strong>. Sin perder tiempo, con estrategias probadas de comunicación y actitudes que realmente funcionan.</p>
-                <div class="cta-buttons">
-                    <a href="#contacto" class="cta-button">Llamada GRATUITA 30 min</a>
-                    <a href="#servicios" class="cta-button secondary">Conoce el Método</a>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div style="font-size: 2rem;">↓</div>
-                <div>Descubre más</div>
-            </div>
-        </section>
-
-        <section id="testimonios" class="section-white">
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section">
             <h2>Lo Que Dicen Mis Clientes</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Estaba completamente perdido, fatigado por mi trabajo, mis desplazamientos y mi historia de amor que me tenía la cabeza bajo el agua. Saimón me ayudó a recuperar la confianza en mí mismo, a hablar, a cuestionarme y abrirme los ojos. Durante 3 meses estuvo presente, nunca me sentí juzgado y me liberé día tras día. Cada sesión era una bocanada de oxígeno. Ahora tengo muchos proyectos con mi pareja y me siento más libre."</p>
-                    <div class="client-name">- Guillermo M.</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Saimón es verdaderamente una masterclass en términos de seducción, comunicación, escucha y divulgación. Hice mi formación íntegramente con él y puse en aplicación todos estos consejos y resultados. Ahora tengo mucha más confianza para abordar a cualquier mujer. Si eres serio, honesto contigo mismo y quieres liberarte de tus cadenas psicológicas para pasar al próximo nivel, es exactamente el formador que necesitas."</p>
-                    <div class="client-name">- Lorenzo R.</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Me siento más feliz, más confiado, me desapego de todo y vivo para mí. Hice los ejercicios que me diste para cambiar la historia con mi padre, va mucho mejor ahora. Globalmente llego simplemente a ir hacia las mujeres en las noches, hay aún mucho progreso que hacer, pero eso es día y noche comparado con antes."</p>
-                    <div class="client-name">- Vicente M.</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Empecé el coaching con Saimón después de comprar su formación. Un tipo súper, hicimos el recorrido de toda la situación, puso en luz los diferentes puntos, lo que iba bien, lo que había que cambiar, los comportamientos femeninos, la psicología femenina. Me ayudó a entender la importancia de ser un hombre bien plantado, florecido e inspirador, con quien ella tendría ganas de quedarse. Gracias a él inicio hoy una nueva relación con la mujer que deseaba de todo corazón."</p>
-                    <div class="client-name">- Tomás L.</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Tengo cada vez más facilidad para escuchar y ser paciente, mi enfoque está más disperso así que tengo las ideas más claras. Es genial, gracias, tengo un buen coach. Mi confianza sube poco a poco."</p>
-                    <div class="client-name">- Pablo T.</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Hola Saimón, quiero decirte que eres una persona increíble, fuiste de gran ayuda cuando más lo necesitaba para aquellos que buscan a alguien para avanzar en sus vidas y morder la vida a plenos dientes. Estás en la dirección correcta, me aportas ondas positivas el hecho de hacer un balance todas las semanas con el objetivo de avanzar y comprender mis expectativas y encontrar las soluciones."</p>
-                    <div class="client-name">- Nicolás R.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicios" class="section-dark">
-            <h2>Mi Método Probado</h2>
-            <div class="services">
-                <div class="service">
-                    <span class="service-icon">💬</span>
-                    <h3>Comunicación Magnética</h3>
-                    <p>Desarrolla la habilidad de conversar de manera auténtica y atractiva. Aprende a conectar genuinamente y generar interés desde la primera conversación.</p>
-                </div>
-                <div class="service">
-                    <span class="service-icon">🔥</span>
-                    <h3>Actitud Irresistible</h3>
-                    <p>Transforma tu mentalidad y presencia para volverte naturalmente atractivo. Desarrolla la confianza que las mujeres realmente valoran.</p>
-                </div>
-                <div class="service">
-                    <span class="service-icon">🎯</span>
-                    <h3>Estrategia de 90 Días</h3>
-                    <p>Un plan paso a paso diseñado específicamente para encontrar a tu mujer ideal en menos de 90 días. Sin perder tiempo ni energía.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="especialidad" class="section-white">
-            <div class="specialization">
-                <h2>Mi Especialidad</h2>
-                <div class="specialization-highlight">
-                    <h3>Encuentra a Tu Mujer Soñada en 90 Días</h3>
-                    <p style="font-size: 1.2rem; line-height: 1.8;">
-                        Me especializo en ayudar a <strong>hombres</strong> que están cansados de perder tiempo y quieren resultados reales. 
-                        <br><br>
-                        Con mi método probado de <strong>comunicación magnética</strong> y <strong>actitudes irresistibles</strong>, mis clientes encuentran a su pareja ideal en menos de 90 días.
-                        <br><br>
-                        <strong>¿Estás listo para conocer a la mujer de tus sueños?</strong>
-                    </p>
+                    <p>"Estaba completamente perdido, fatigado por mi trabajo y mi historia de amor que me tenía la cabeza bajo el agua. Saimón me ayudó a recuperar la confianza en mí mismo. Durante 3 meses estuvo presente, cada sesión era una bocanada de oxígeno. Ahora tengo muchos proyectos con mi pareja y me siento más libre."</p>
+                    <div class="author">- Guillermo M.</div>
                 </div>
                 
                 <div class="testimonial">
-                    <blockquote>
-                        "No se trata de trucos o técnicas falsas. Se trata de convertirte en la mejor versión de ti mismo para atraer naturalmente a la mujer que realmente mereces."
-                    </blockquote>
-                    <cite>- Saimón Pablo</cite>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Saimón es verdaderamente una masterclass en términos de seducción, comunicación y escucha. Hice mi formación íntegramente con él y puse en aplicación todos sus consejos. Ahora tengo mucha más confianza para abordar a cualquier mujer. Es exactamente el formador que necesitas."</p>
+                    <div class="author">- Lorenzo R.</div>
                 </div>
                 
-                <div style="background: #ff6b6b; color: white; padding: 2rem; border-radius: 15px; margin-top: 2rem; text-align: center;">
-                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">¿Listo para Empezar?</h3>
-                    <p style="font-size: 1.3rem; margin-bottom: 1.5rem;">
-                        Manda <strong>"QUIERO"</strong> y me pongo en contacto contigo
-                    </p>
-                    <p style="font-size: 1.1rem;">
-                        📞 <strong>Llamada GRATUITA de 30 minutos</strong> - Sin compromiso
-                    </p>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Empecé el coaching después de comprar su formación. Me ayudó a entender la psicología femenina y ser un hombre que inspire. Me enseñó la importancia de ser un hombre bien plantado y florecido. Gracias a él inicio hoy una nueva relación con la mujer que deseaba de todo corazón."</p>
+                    <div class="author">- Tomás L.</div>
                 </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="section-dark">
-            <h2>Contáctame</h2>
-            <div class="contact-card">
-                <div class="profile-img">SP</div>
-                <h3 style="font-size: 2rem; color: #1e3c72; margin-bottom: 0.5rem;">Saimón Pablo</h3>
-                <p style="color: #667eea; font-size: 1.2rem; margin-bottom: 2rem;">Coach Especializado en Relaciones | Encuentra a tu mujer soñada en 90 días</p>
                 
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>✉️</span>
-                        <span>saimon.pablo.coach@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+34 663 420 054</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>💚</span>
-                        <a href="https://wa.me/message/LYRFQKDULL5SA1" target="_blank" style="color: #25D366; text-decoration: none;">WhatsApp Directo</a>
-                    </div>
-                </div>
-
-                <div class="qr-section">
-                    <h4 style="color: #1e3c72; margin-bottom: 1rem;">Escanea para contactar</h4>
-                    <div class="qr-code" id="qrcode">
-                        <!-- QR Code se generará aquí -->
-                    </div>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
-                        Guarda mis datos de contacto en tu teléfono
-                    </p>
-                </div>
-
-                <div style="margin-top: 2rem;">
-                    <a href="mailto:saimon.pablo.coach@gmail.com?subject=QUIERO - Llamada Gratuita&body=Hola Saimón, QUIERO agendar mi llamada gratuita de 30 minutos. Estoy listo para encontrar a mi mujer soñada en 90 días." class="cta-button">Envía "QUIERO" por Email</a>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Tengo cada vez más facilidad para escuchar y ser paciente, mi enfoque está más claro y mi confianza sube poco a poco. Durante todo el coaching me sentí guiado y respetado. Avanzamos paso a paso con su expertise."</p>
+                    <div class="author">- Pablo T.</div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="servicios">
+        <h2>Mi Método Probado</h2>
+        <div class="services-grid">
+            <div class="service">
+                <div class="service-icon">💬</div>
+                <h3>Comunicación Magnética</h3>
+                <p>Desarrolla la habilidad de conversar de manera auténtica y atractiva. Aprende a conectar genuinamente y generar interés desde la primera conversación.</p>
+            </div>
+            
+            <div class="service">
+                <div class="service-icon">🔥</div>
+                <h3>Actitud Irresistible</h3>
+                <p>Transforma tu mentalidad y presencia para volverte naturalmente atractivo. Desarrolla la confianza que las mujeres realmente valoran.</p>
+            </div>
+            
+            <div class="service">
+                <div class="service-icon">🎯</div>
+                <h3>Estrategia de 90 Días</h3>
+                <p>Un plan paso a paso diseñado específicamente para encontrar a tu mujer ideal en menos de 90 días. Sin perder tiempo ni energía.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty -->
+    <section class="specialty">
+        <h2>Encuentra a Tu Mujer Soñada en 90 Días</h2>
+        <p>Me especializo en ayudar a hombres que están cansados de perder tiempo y quieren resultados reales. Con mi método probado de comunicación magnética y actitudes irresistibles, mis clientes encuentran a su pareja ideal en menos de 90 días.</p>
+        <br>
+        <p><strong>¿Estás listo para conocer a la mujer de tus sueños?</strong></p>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contacto">
+        <h2>¿Listo para Empezar?</h2>
+        <p class="contact-text">No se trata de trucos o técnicas falsas. Se trata de convertirte en la mejor versión de ti mismo para atraer naturalmente a la mujer que realmente mereces.</p>
+        
+        <div class="quiero-text">
+            Manda <span>"QUIERO"</span> y me pongo en contacto contigo
+        </div>
+        
+        <p>📞 Llamada GRATUITA de 30 minutos - Sin compromiso</p>
+        
+        <div style="margin-top: 2rem;">
+            <a href="mailto:saimon.pablo.coach@gmail.com?subject=QUIERO - Llamada Gratuita&body=Hola Saimón, QUIERO agendar mi llamada gratuita de 30 minutos. Estoy listo para encontrar a mi mujer soñada en 90 días." class="cta-button">Envía "QUIERO" por Email</a>
+        </div>
+    </section>
 
     <script>
-        // Generar QR Code con datos de contacto
-        function generateQR() {
-            // QR Code removido para simplificar
-        }
-
-        // Smooth scrolling para los enlaces
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -957,45 +390,6 @@
                     });
                 }
             });
-        });
-
-        // Animación de entrada para elementos cuando aparecen en pantalla
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service, .contact-card').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'all 0.6s ease';
-            observer.observe(element);
-        });
-
-        // Inicializar página
-        document.addEventListener('DOMContentLoaded', function() {
-            // Página lista
-        });
-
-        // Efecto header al hacer scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            }
         });
     </script>
 </body>
