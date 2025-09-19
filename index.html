@@ -17,13 +17,53 @@
             color: #333;
         }
 
-        /* Header */
+        /* Header con fondo romántico inspirado en la imagen */
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.6)),
+                radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%),
+                linear-gradient(135deg, #2c1810 0%, #4a3728 20%, #667eea 60%, #764ba2 100%);
+            background-size: cover, 800px 600px, cover;
+            background-position: center, center, center;
+            background-attachment: fixed;
             color: white;
             padding: 2rem 0;
             text-align: center;
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .social-links {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 3rem;
+            order: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            order: 2;
         }
 
         .social-links {
@@ -62,15 +102,37 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ffffff, #f0f8ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(45deg, #ffd93d, #ff6b6b, #ffd93d);
+            border-radius: 2px;
         }
 
         .hero-content .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
         }
 
         .hero-content .description {
@@ -238,29 +300,64 @@
             color: #ffd93d;
         }
 
-        /* Responsive */
+        /* Responsive mejorado */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .header {
+                background-attachment: scroll;
+                padding: 2rem 0;
+                min-height: 100vh;
+                flex-direction: column;
             }
-
+            
             .social-links {
-                position: static;
+                position: relative;
                 justify-content: center;
                 margin-bottom: 2rem;
+                order: 1;
+            }
+            
+            .hero-content {
+                order: 2;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.3rem;
             }
 
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            .testimonial {
+                padding: 2rem 1.5rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service {
+                padding: 2rem 1.5rem;
             }
 
             .section {
                 padding: 3rem 1rem;
+            }
+
+            .specialty {
+                padding: 3rem 1rem;
+            }
+
+            .specialty h2 {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -289,7 +386,7 @@
         <div class="hero-content">
             <h1>Saimón Pablo</h1>
             <div class="subtitle">Coach Especializado en Relaciones</div>
-            <p class="description">Ayudo a hombres a encontrar a su mujer soñada en menos de 90 días. Sin perder tiempo, con estrategias probadas de comunicación y actitudes que realmente funcionan.</p>
+            <p class="description">Ayudo a hombres a encontrar a su mujer soñada o mejorar su relación que se está perdiendo, en menos de 90 días. Sin perder tiempo, con estrategias probadas de comunicación y actitudes que realmente funcionan.</p>
             <div>
                 <a href="#contacto" class="cta-button">Llamada GRATUITA 30 min</a>
                 <a href="#servicios" class="cta-button cta-secondary">Conoce el Método</a>
@@ -325,6 +422,18 @@
                     <p>"Tengo cada vez más facilidad para escuchar y ser paciente, mi enfoque está más claro y mi confianza sube poco a poco. Durante todo el coaching me sentí guiado y respetado. Avanzamos paso a paso con su expertise."</p>
                     <div class="author">- Pablo T.</div>
                 </div>
+                
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Me siento más feliz, más confiado, me desapego de todo y vivo para mí. Hice los ejercicios que me diste para cambiar la historia con mi padre, va mucho mejor ahora. Logré ir hacia las mujeres en eventos sociales, hay progreso que es día y noche comparado con antes."</p>
+                    <div class="author">- Vicente M.</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Empecé el coaching con Saimón después de comprar su formación porque quería volver con mi ex-pareja. Me ayudó a entender la psicología femenina y los mecanismos de funcionamiento que yo conocía poco. Completamente inesperado, ahora nos acercamos de nuevo y inicio hoy una nueva relación con la mujer que deseaba de todo mi corazón."</p>
+                    <div class="author">- Kevin S.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -356,9 +465,11 @@
     <!-- Specialty -->
     <section class="specialty">
         <h2>Encuentra a Tu Mujer Soñada en 90 Días</h2>
-        <p>Me especializo en ayudar a hombres que están cansados de perder tiempo y quieren resultados reales. Con mi método probado de comunicación magnética y actitudes irresistibles, mis clientes encuentran a su pareja ideal en menos de 90 días.</p>
+        <p>Me especializo en ayudar a hombres que están cansados de perder tiempo y quieren resultados reales. Ya sea que busques encontrar a la mujer perfecta para ti o recuperar la pasión en tu relación actual.</p>
         <br>
-        <p><strong>¿Estás listo para conocer a la mujer de tus sueños?</strong></p>
+        <p>Con mi método probado de <strong>comunicación magnética</strong> y <strong>actitudes irresistibles</strong>, mis clientes logran transformaciones reales en menos de 90 días.</p>
+        <br>
+        <p><strong>¿Estás listo para conocer a la mujer de tus sueños o salvar tu relación con herramientas probadas?</strong></p>
     </section>
 
     <!-- Contact -->
