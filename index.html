@@ -939,24 +939,10 @@
         </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
         // Generar QR Code con datos de contacto
         function generateQR() {
-            const contactData = `https://wa.me/message/LYRFQKDULL5SA1`;
-
-            const qr = new QRious({
-                element: document.createElement('canvas'),
-                value: contactData,
-                size: 200,
-                background: 'white',
-                foreground: '#25D366',
-                level: 'M'
-            });
-
-            const qrContainer = document.getElementById('qrcode');
-            qrContainer.innerHTML = '';
-            qrContainer.appendChild(qr.canvas);
+            // QR Code removido para simplificar
         }
 
         // Smooth scrolling para los enlaces
@@ -995,8 +981,10 @@
             observer.observe(element);
         });
 
-        // Inicializar QR Code
-        generateQR();
+        // Inicializar página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Página lista
+        });
 
         // Efecto header al hacer scroll
         window.addEventListener('scroll', () => {
