@@ -340,6 +340,100 @@
             color: #ffd93d;
         }
 
+        /* Quiz Section */
+        .quiz-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, -20px); }
+        }
+
+        .quiz-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quiz-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .quiz-content h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-description {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .quiz-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .quiz-button {
+            background: white;
+            color: #667eea;
+            font-size: 1.3rem;
+            padding: 18px 45px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quiz-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-5px);
+        }
+
+        .quiero-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
         /* Responsive optimizado */
         @media (max-width: 768px) {
             .header {
@@ -397,6 +491,24 @@
             .specialty h2 {
                 font-size: 2.2rem;
             }
+
+            .quiz-content h2 {
+                font-size: 2rem;
+            }
+
+            .quiz-description {
+                font-size: 1.1rem;
+            }
+
+            .quiz-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .quiz-button {
+                font-size: 1.1rem;
+                padding: 15px 30px;
+            }
         }
     </style>
 </head>
@@ -426,11 +538,31 @@
             <div class="subtitle">Coach Especializado en Relaciones</div>
             <p class="description">Ayudo a hombres a encontrar a su mujer soñada o mejorar su relación que se está perdiendo, en menos de 90 días. Sin perder tiempo, con estrategias probadas de comunicación y actitudes que realmente funcionan.</p>
             <div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMI8LS7NHZFbbJTrzuhAx2m1b7WzRuXftavp88HJVj001Jzg/viewform" target="_blank" class="cta-button">🎯 QUIERO Mi Prueba</a>
                 <a href="#contacto" class="cta-button">Llamada GRATUITA 30 min</a>
                 <a href="#servicios" class="cta-button cta-secondary">Conoce el Método</a>
             </div>
         </div>
     </header>
+
+    <!-- Quiz/Test Section -->
+    <section class="quiz-section">
+        <div class="section">
+            <div class="quiz-content">
+                <div class="quiz-icon">🎯</div>
+                <h2>¿Dónde Estás en Tu Vida Relacional?</h2>
+                <p class="quiz-description">Descubre tu situación actual y recibe una estrategia personalizada para encontrar a tu mujer soñada o mejorar tu relación.</p>
+                <div class="quiz-features">
+                    <div class="feature">✓ Solo 2 minutos</div>
+                    <div class="feature">✓ Diagnóstico personalizado</div>
+                    <div class="feature">✓ 100% confidencial</div>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMI8LS7NHZFbbJTrzuhAx2m1b7WzRuXftavp88HJVj001Jzg/viewform" target="_blank" class="cta-button quiz-button">
+                    <span class="quiero-badge">QUIERO</span> Hacer Mi Prueba de Relaciones
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials -->
     <section class="testimonials">
@@ -508,11 +640,15 @@
         <p>Con mi método probado de <strong>comunicación magnética</strong> y <strong>actitudes irresistibles</strong>, mis clientes logran transformaciones reales en menos de 90 días.</p>
         <br>
         <p><strong>¿Estás listo para conocer a la mujer de tus sueños o salvar tu relación con herramientas probadas?</strong></p>
+        <br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMI8LS7NHZFbbJTrzuhAx2m1b7WzRuXftavp88HJVj001Jzg/viewform" target="_blank" class="cta-button" style="background: white; color: #ff6b6b;">
+            🎯 QUIERO Hacer Mi Prueba Ahora
+        </a>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contacto">
-        <h2>¿Listo para Empezar?</h2>
+        <h2>¿Prefieres Hablar Directamente?</h2>
         <p class="contact-text">No se trata de trucos o técnicas falsas. Se trata de convertirte en la mejor versión de ti mismo para atraer naturalmente a la mujer que realmente mereces.</p>
         
         <div class="quiero-text">
